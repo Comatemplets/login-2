@@ -1,0 +1,241 @@
+:root {
+  --main-color: #c6c9ff;
+  --main-color-sec: #8870e6;
+  --transition-color: #7453f5;
+  --main-transition: 0.5s;
+}
+* {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+html {
+  scroll-behavior: smooth;
+}
+a {
+  text-decoration: none;
+}
+ul {
+  list-style: none;
+}
+body {
+  position: relative;
+  font-family: "Comfortaa", cursive;
+  overflow: hidden;
+  margin: 0;
+}
+
+/* checkbox button start*/
+.checkbox-buttom {
+  width: 18px;
+  height: 18px;
+  margin-right: 10px;
+}
+.checkbox-buttom input {
+  display: none;
+}
+.checkbox-buttom label {
+  position: relative;
+  width: 18px;
+  height: 18px;
+  box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px,
+    rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;
+  border-radius: 3px;
+  overflow: hidden;
+  cursor: pointer;
+}
+.checkbox-buttom label::before {
+  font-family: var(--fa-style-family-classic);
+  content: "\f00c";
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 12px;
+  color: white;
+  background-color: var(--main-color-sec);
+  opacity: 0;
+  transform: scale(0);
+  transition: var(--main-transition);
+  border-radius: 3px;
+}
+.checkbox-buttom input:checked + label::before {
+  opacity: 1;
+  transform: scale(1);
+}
+/* checkbox button end */
+/* start loader  */
+.loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  transition: 0.75s;
+  z-index: 10000;
+}
+.loader-hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+.loader::before {
+  content: "";
+  width: 75px;
+  height: 75px;
+  border: 5px solid #eee;
+  border-top-color: var(--main-color-sec);
+  border-radius: 50%;
+  animation: loading 0.75s ease infinite;
+}
+/* End loader  */
+/* formats login page and register page  */
+/* Content-box start */
+.content .img-box {
+  background-image: url(../img/background.jpg);
+  background-size: cover;
+  flex: 1;
+}
+.content .img-box .text {
+  padding: 20px;
+}
+.content .img-box h2 {
+  font-size: 40px;
+  color: #8870e6;
+  text-align: center;
+}
+.content .img-box p {
+  font-size: 13px;
+  letter-spacing: 2px;
+  max-width: 360px;
+  margin: 10px 0;
+}
+
+.content .login-box {
+  flex: 1;
+  padding: 60px;
+  background-color: white;
+}
+.content .login-box .button-log-reg {
+  top: 50px;
+}
+.content .login-box .button-log-reg a {
+  padding: 10px;
+  background-color: white;
+  color: gray;
+  box-shadow: 0 0 5px rgb(0 0 0 / 20%);
+  border-radius: 2px;
+  transition: var(--main-transition);
+}
+.content .login-box .button-log-reg a:hover,
+.content .login-box .button-log-reg a.active {
+  color: white;
+  background-color: var(--main-color-sec);
+}
+.content form {
+  width: 400px;
+  height: 500px;
+  padding: 20px;
+  box-shadow: 0 0 5px rgb(0 0 0 / 20%);
+  border-radius: 20px;
+  justify-content: space-around;
+}
+.content form h2 {
+  margin: 15px 0;
+  font-size: 25px;
+  text-align: center;
+}
+.content form .log-reg-form input {
+  padding: 15px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  box-shadow: 0 0 5px rgb(0 0 0 / 20%);
+  margin-bottom: 15px;
+}
+.content form .log-reg-form input:focus::placeholder {
+  opacity: 0;
+  transition: var(--main-transition);
+}
+.content form .remember-forget p {
+  font-size: 14px;
+  margin: 0;
+  color: gray;
+}
+.content form .remember-forget a {
+  font-size: 14px;
+  margin-left: 3px;
+  color: black;
+}
+.content form .remember-forget a:hover {
+  color: var(--main-color-sec);
+}
+.content form input[type="submit"] {
+  padding: 15px;
+  margin: 15px 0;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  color: white;
+  background-color: var(--main-color-sec);
+  transition: var(--main-transition);
+}
+.content form input[type="submit"]:hover {
+  background-color: var(--transition-color);
+}
+.content form .social-list {
+  margin: 0px auto;
+  gap: 15px;
+  padding: 0;
+}
+.content form .social-list a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  color: white;
+  background-color: #c6c9ff;
+  border-radius: 50%;
+  transition: var(--main-transition);
+}
+
+.content form .social-list a:hover {
+  color: white;
+  background-color: var(--transition-color);
+}
+
+@media (max-width: 767px) {
+  .content {
+    flex-direction: column;
+  }
+  .content .img-box {
+    background-image: none;
+  }
+  .content .img-box h2 {
+    font-size: 30px;
+  }
+  .content .login-box .button-log-reg {
+    top: 18px;
+  }
+  .content form {
+    padding: 10px;
+  }
+}
+
+/* content-box end  */
+/* start animation  */
+@keyframes loading {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+/* End animation  */
