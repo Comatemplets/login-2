@@ -112,13 +112,14 @@ body {
 .content .img-box p {
   font-size: 13px;
   letter-spacing: 2px;
+  text-align: center;
   max-width: 360px;
   margin: 10px 0;
 }
 
 .content .login-box {
   flex: 1;
-  padding: 60px;
+  padding: 20px;
   background-color: white;
 }
 .content .login-box .button-log-reg {
